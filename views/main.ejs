@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Register Form</title>
+    <link rel ="stylesheet" type="text/css" href= "https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+</head>
+<body>
+    <h1> Simple Register Form </h1>
+    <form action= "/sendForm" method="GET" >
+   <div class = "container">  
+    <div class = "jumbotron">
+        <div class = "form-field">
+        <!-- Name Input - Mandatory. Pattern added for greater than 5 characters and less than 30 -->
+        <label for "name"> Name: </label>
+        <input type = "text" id = "name" name = "username"  placeholder = "Enter Name" pattern=".{5,30}" required title = "Name must be greater than 5 characters">
+        </div>
+        <!-- Address input - Mandatory. Pattern added for Greater than 5 characters with Alpha-Numeric Data.  -->
+        <div class = "form-field">
+        <label for "address"> Address: </label>
+        <input type = "textarea" id = "address" name = "address"  placeholder = "Enter Address" pattern= "[a-zA-Z0-9\s]+.{5,30}" required>
+        </div>
+        <!-- DOB Input - Mandatory. JavaScript added Min Date 1918.  -->
+        <div class = "form-field">
+        <label> D.O.B: </label>
+        <input type="date" id="date" name = "dob" placeholder="dateofBirth" required>
+       <script>
+        document.getElementById('date').setAttribute("min", '1918-01-01');
+       </script>
+        </div>
+         <button type = "submit" class= "btn btn-primary btn-xs"> Submit </button>
+        </div>
+    </div>
+    </form>
+</body>
+</html> 
